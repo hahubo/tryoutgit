@@ -1,0 +1,31 @@
+-rwxr-xr-x 1 han han 10105379 sep 22  2019 /usr/dieka/dvlp/dieka.fast*
+  No failures (ook de nieuwste gaan goed incl. texmic en fric/ Trim)
+  Dit is de folder waarook digu etc staan)
+
+-rwxrwxr-x 1 han han 5092728 sep 10  2019 /usr/local/dieka11dvlp/dieka.fast*
+3failures  omdat nieuwere features ( texmic en fric/ Trim) niet zijn geimplementeerd
+  1 hanlinux-760    texmic-sh FAILED with /usr/local/dieka11dvlp/dieka.fast
+  2 hanlinux-760    fric_squeeze FAILED with /usr/local/dieka11dvlp/dieka.fast
+  3 hanlinux-760    fric_locf_squeeze FAILED with /usr/local/dieka11dvlp/dieka.fast
+
+-rwxr-xr-x 1 han han 5104232 sep 26  2019 /home/han/dvlp/dieka.fast* fout
+-rwxr-xr-x 1 han han 5104232 sep 26  2019 /usr/local/DiekaLim2019NoTst/dieka.fast* deleted
+-rwxr-xr-x 1 han han 5068040 sep 28  2019 /usr/local/DiekaLim2019/dieka.fast* Opnieuw te compileren
+-rwxr-xr-x 1 han han 5029648 mei 23 13:00 /usr/local/dieka.fast* opnieuw gecompileerd 
+-rwxr-xr-x 1 han han 5029648 mei 23 13:00 /usr/local/DiekaLimCleanWin/dieka/trunk/gfortran/dieka.fast opnieuw gecompileerd 
+-rwxr-xr-x 1 han han 5029648 mei 23 13:00 /usr/local/bin/dieka.fast opnieuw gecompileerd (LimCleanWin)
+failures in  bovenstaande door incompatable gcc en (updated) gfortran. folders verwijderen!
+
+Opnieuw gecompileerd:
+-rwxr-xr-x 1 han han 5092672 okt  1 12:14 /usr/local/DiekaLimCleanWin/dieka/trunk/gfortran/dieka.fast
+-rwxr-xr-x 1 han han 5092672 okt  1 14:06 dieka.fast (gecopieerd)
+Nu goed, alleen 3failures  omdat nieuwere features ( texmic en fric/ Trim) niet zijn geimplementeerd
+  1 hanlinux-760    texmic-sh FAILED with /usr/local/dieka11dvlp/dieka.fast
+  2 hanlinux-760    fric_squeeze FAILED with /usr/local/dieka11dvlp/dieka.fast
+  3 hanlinux-760    fric_locf_squeeze FAILED with /usr/local/dieka11dvlp/dieka.fast
+
+-rwxr-xr-x 1 han han 5155040 okt  1 15:27 /usr/local/DiekaLim2019/dieka.fast
+ oppassen: separaat eerst opnieuw gendep (clean en make) en linalg90 (clean en make)
+ Deze zijn niet clean door dieka/trunk/cleanall!! 
+
+

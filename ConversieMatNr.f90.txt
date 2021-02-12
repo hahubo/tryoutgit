@@ -1,0 +1,370 @@
+    SUBROUTINE cnvtbm(matg)
+      ! . Purpose:
+      ! . Determines comment per material group number.
+      ! . Specially written to make it possible to select elements and/or
+      ! . materials during postprocessing.
+      ! . Output to file 'inputfile.emd' is:
+      ! . MATG  : material group number
+      ! . MTYP  : material type number (see inmate)
+      ! . MATTYP: material type name
+      ! . PRI   : first comment line
+      ! . SEC   : second comment line
+      ! .
+      ! . Arguments:
+      ! . matg INT IN  material group number
+      ! .----------------------------------------------------------------------
+      ! .. Use Statements ..
+      USE matmod, ONLY : mater
+
+      USE files, ONLY : ipeter
+      ! ..
+      ! .. Implicit None Statement ..
+      IMPLICIT NONE
+      ! ..
+      ! .. Scalar Arguments ..
+      INTEGER, INTENT (IN) :: matg
+      ! ..
+      ! .. Local Scalars ..
+      INTEGER :: mtyp
+      CHARACTER (80) :: mattyp, pri, sec
+      ! ..
+      ! .. External Subroutines ..
+      EXTERNAL cnvtbm_ps, strail
+      ! ..
+      ! .. Intrinsic Functions ..
+      INTRINSIC trim
+      ! ..
+      ! .. Executable Statements ..
+      CALL strail('CNVTBM')
+
+      mtyp = mater(1,matg)
+
+      pri = ' '
+      sec = ' '
+
+      IF (mtyp==101) THEN
+        mattyp = 'Drucker-Prager'
+
+      ELSE IF (mtyp==102) THEN
+
+        mattyp = 'Drucker-Prager (softening)'
+
+      ELSE IF (mtyp==104) THEN
+
+        mattyp = 'Kelvin'
+
+      ELSE IF (mtyp==105) THEN
+
+        mattyp = 'Viscoleastic'
+
+      ELSE IF (mtyp==116) THEN
+
+        mattyp = 'Mohr-Coulomb'
+
+      ELSE IF (mtyp==117) THEN
+
+        mattyp = 'Mohr-Coulomb (softening)'
+
+      ELSE IF (mtyp==118) THEN
+
+        mattyp = 'Rock'
+
+      ELSE IF (mtyp==119) THEN
+
+        mattyp = 'User defined material model'
+
+      ELSE IF (mtyp==120) THEN
+
+        mattyp = 'Viscous model (Newton,Carreau etc.)'
+
+      ELSE IF (mtyp==131) THEN
+
+        mattyp = 'Von Mises (elastic-plastic)'
+
+      ELSE IF (mtyp==132) THEN
+
+        mattyp = 'Von Mises (rigid-plastic strain-rate dependent)'
+
+      ELSE IF (mtyp==133) THEN
+
+        mattyp = 'Von Mises (rigid-plastic)'
+
+      ELSE IF (mtyp==134) THEN
+
+        mattyp = 'Von Mises (viscous creep)'
+
+      ELSE IF (mtyp==135) THEN
+
+        mattyp = 'Von Mises (hot aluminium model)'
+
+      ELSE IF (mtyp==136) THEN
+
+        mattyp = 'Von Mises (VM)'
+
+      ELSE IF (mtyp==137) THEN
+
+        mattyp = 'Texture and microstructure based plasticity'
+
+      ELSE IF (mtyp==145) THEN
+
+        mattyp = 'Hill48'
+
+      ELSE IF (mtyp==150) THEN
+
+        mattyp = 'Von Mises (MEPRIP)'
+
+      ELSE IF (mtyp==151) THEN
+
+        mattyp = 'Von Mises (MEPRIP - hot aluminium)'
+
+      ELSE IF (mtyp==160) THEN
+
+        mattyp = 'General elasto-plastic material'
+
+      ELSE IF (mtyp==179) THEN
+
+        mattyp = 'Anisotropic Damage Model'
+
+      ELSE IF (mtyp==161) THEN
+
+        mattyp = 'General elasto-plastic material with distortional hardening'
+
+      ELSE IF (mtyp==170) THEN
+
+        mattyp = 'Teodosiu elasto-plastic material'
+
+      ELSE IF (mtyp==201) THEN
+
+        mattyp = 'Von Mises, thermal'
+
+      ELSE IF (mtyp==211) THEN
+
+        mattyp = 'Viscous thermal (TAIT,Modt/wlf,arrh...)'
+
+      ELSE IF (mtyp==220) THEN
+
+        mattyp = 'Von Mises, thermal (MEPRIP)'
+
+      ELSE IF (mtyp==231) THEN
+
+        mattyp = 'Curing (vezel)'
+
+      ELSE IF (mtyp==236) THEN
+
+        mattyp = 'Viscoelastic (TAIT/Jeffreys,Maxwell)'
+
+      ELSE IF (mtyp==237) THEN
+
+        mattyp = 'VAT (Von Mises thermal with variable alpha)'
+
+      ELSE IF (mtyp==251) THEN
+
+        mattyp = 'Phase transformations'
+
+      ELSE IF (mtyp==303) THEN
+
+        mattyp = 'Hill'
+        pri = 'Elastic plastic planar isotropic hardening'
+        sec = 'Anisotropic Yielding'
+
+      ELSE IF (mtyp==307) THEN
+
+        mattyp = 'Hill'
+        pri = '(non-linear) elastisc'
+        sec = 'Anisotropic Yielding'
+
+      ELSE IF (mtyp==319) THEN
+
+        mattyp = 'Hill'
+        pri = 'Rigid plastic and isotropic hardening'
+        sec = 'Anisotropic Yielding'
+
+      ELSE IF (mtyp==323) THEN
+
+        mattyp = 'Elastic plastic Vegter material model'
+        pri = 'Hardening according to Nadai/Ludwik'
+        sec = 'Anisotropic Yielding'
+
+      ELSE IF (mtyp==324) THEN
+
+        mattyp = 'Elastic plastic Vegter material model'
+        pri = 'Hardening according to Vegter'
+        sec = 'Anisotropic Yielding'
+
+      ELSE IF (mtyp==3231) THEN
+
+        mattyp = 'Elastic plastic Vegter material model'
+        pri = 'Bergstrom-vanLiempt hardening'
+        sec = 'Anisotropic Yielding'
+
+
+      ELSE IF (mtyp==3232) THEN
+
+        mattyp = 'Elastic plastic Vegter material model'
+        pri = 'Alflow hardening for warm forming'
+        sec = 'Anisotropic Yielding'
+
+
+      ELSE IF (mtyp==3233) THEN
+
+        mattyp = 'Elastic plastic Vegter material model'
+        pri = 'Alflow hardening with annealing'
+        sec = 'Anisotropic Yielding'
+
+      ELSE IF (mtyp==3235) THEN
+
+        mattyp = 'El. pl. Vegter material model, mixed hardening'
+        pri = 'Hardening according to Nadai/Ludwik'
+        sec = 'Anisotropic Yielding'
+
+      ELSE IF (mtyp==341) THEN
+
+        mattyp = 'Hill'
+        pri = 'Elastic plastic planar isotropic hardening'
+
+      ELSE IF (mtyp==342) THEN
+
+        mattyp = 'Hill'
+        pri = 'Rigid plastic and isotropic hardening'
+
+      ELSE IF (mtyp==351) THEN
+
+        mattyp = 'Contact behaviour'
+
+      ELSE IF (mtyp==357) THEN
+
+        mattyp = 'Contact behaviour, thermal'
+
+      ELSE IF (mtyp==402) THEN
+
+        mattyp = 'Contact behaviour'
+
+      ELSE IF (mtyp==412) THEN
+
+        mattyp = 'Contact behaviour, thermal'
+
+      ELSE IF (mtyp==666) THEN
+
+        mattyp = 'Tresca yield criterion'
+
+      ELSE
+
+        mattyp = 'Unknown material type'
+      END IF
+
+      CALL cnvtbm_ps(mtyp,1,matg,pri,sec)
+
+      WRITE (ipeter,'(A)') '[MATERIAL DATA]'
+      WRITE (ipeter,'(A,I4)') 'MATERIAL GROUP NUMBER=', matg
+      WRITE (ipeter,'(A,I4)') 'MATERIAL NUMBER=', mtyp
+      WRITE (ipeter,'(2A)') 'TYPE=', trim(mattyp)
+      WRITE (ipeter,'(2A)') 'PRI=', trim(pri)
+      WRITE (ipeter,'(2A)') 'SEC=', trim(sec)
+
+    END SUBROUTINE cnvtbm
+
+    SUBROUTINE cnvtbm_ps(mtyp,ityp,matg,pri,sec)
+      ! . Purpose:
+      ! . Add PRI and/or SEC
+      ! .----------------------------------------------------------------------
+      ! .. Use Statements ..
+      USE typ, ONLY : icreep
+
+      USE power, ONLY : ipower
+
+      USE conpar, ONLY : cshape, cwrijf
+      ! ..
+      ! .. Implicit None Statement ..
+      IMPLICIT NONE
+      ! ..
+      ! .. Scalar Arguments ..
+      INTEGER, INTENT (IN) :: ityp, matg, mtyp
+      CHARACTER (80), INTENT (OUT) :: pri, sec
+      ! ..
+      ! .. External Subroutines ..
+      EXTERNAL strail
+      ! ..
+      ! .. Executable Statements ..
+      CALL strail('CNVTBM_PS')
+
+      SELECT CASE (mtyp)
+
+      CASE (351,357,402,412)
+
+        ! Contact material/elements.
+        IF (cshape(matg)=='LINE') THEN
+          pri = 'Linear '
+
+        ELSE IF (cshape(matg)=='PARA') THEN
+
+          pri = 'Parabolic '
+
+        ELSE IF (cshape(matg)=='AULA') THEN
+
+          pri = 'Augm. Lagr. form.'
+        END IF
+
+        IF (cwrijf(matg)=='VISC') THEN
+          sec = 'Viscous friction'
+
+        ELSE IF (cwrijf(matg)=='COUL') THEN
+
+          sec = 'Coulomb friction'
+
+        ELSE IF (cwrijf(matg)=='STRI') THEN
+
+          sec = 'Stribeck friction'
+
+        ELSE IF (cwrijf(matg)=='LOCF') THEN
+
+          sec = 'LOCF (deformation dependent) friction model'
+
+        END IF
+
+      CASE (131:135,141,150,151,201,205)
+
+        ! Bulk material
+        IF (mtyp==132) THEN
+
+          pri = 'strain rate dependent'
+
+        ELSE IF (mtyp==134) THEN
+
+          pri = 'viscous creep'
+
+        ELSE IF (mtyp==135 .OR. mtyp==151) THEN
+
+          pri = 'Hot aluminium (Kings College)'
+
+        END IF
+
+        IF (icreep(ityp,matg)==0) THEN
+
+          IF (ipower(ityp,matg)==0) THEN
+            sec = 'Voce'
+
+          ELSE IF (ipower(ityp,matg)==1) THEN
+
+            sec = 'Nadai'
+
+          ELSE
+
+            sec = 'Unknown hardening model'
+          END IF
+
+        ELSE IF (icreep(ityp,matg)==1) THEN
+
+          sec = 'Evp'
+
+        ELSE IF (icreep(ityp,matg)==4) THEN
+
+          sec = 'Evpx'
+
+        ELSE
+
+          sec = 'Unknown creep model'
+        END IF
+
+      END SELECT
+
+    END SUBROUTINE cnvtbm_ps

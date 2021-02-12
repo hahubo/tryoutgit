@@ -1,0 +1,49 @@
+/home/han/.local/share/Trash/files/dieka.fast
+/home/han/.local/share/Trash/files/Dieka10(1) (1).zip/DiekaLim/dieka/trunk/gfortran/dieka.fast
+/home/han/.local/share/Trash/files/Dieka10(1) (1).zip/DiekaLim/dieka/trunk/gfortran/libdieka.fast.a
+/home/han/.local/share/Trash/files/Dieka10(1).2.zip/DiekaLim/dieka/trunk/gfortran/dieka.fast
+/home/han/.local/share/Trash/files/Dieka10(1).2.zip/DiekaLim/dieka/trunk/gfortran/libdieka.fast.a
+/home/han/.local/share/Trash/files/Dieka11Source.2.zip/DiekaLim/dieka/trunk/gfortran/dieka.fast
+/home/han/.local/share/Trash/files/Dieka11Source.2.zip/DiekaLim/dieka/trunk/gfortran/libdieka.fast.a
+/home/han/.local/share/Trash/files/DiekaLim2019NoTst (1)/dieka/trunk/gfortran/dieka.fast
+/home/han/.local/share/Trash/files/DiekaLim2019NoTst (1)/dieka/trunk/gfortran/libdieka.fast.a
+/home/han/.local/share/Trash/files/DiekaSrcCln.3/dieka/trunk/gfortran/dieka.fast
+/home/han/.local/share/Trash/files/DiekaSrcCln.3/dieka/trunk/gfortran/libdieka.fast.a
+/home/han/.local/share/Trash/files/DiekaSrcCln.5/dieka.fast
+/home/han/.local/share/Trash/info/dieka.fast.trashinfo
+/home/han/Dieka/DiekaLim2019NoTst/dieka/trunk/gfortran/dieka.fast
+/home/han/Dieka/DiekaLim2019NoTst/dieka/trunk/gfortran/libdieka.fast.a
+/home/han/Dieka/DiekaSrcCln/test/dieka.fast
+/home/han/Dieka11.1-dvlp-install/user-image/unix/intel64-linux/dieka.fast
+/home/han/Downloads/Gid2diekaTon/gid/dieka/hppa/dieka.fast
+/home/han/Downloads/Gid2diekaTon/gid/dieka/intel-linux/dieka.fast
+/home/han/Hantmku/DDDold/dieka/intel-linux/dieka.fast
+/home/han/Hantmku/GidLapt/Gid/dieka.fast
+/home/han/Hantmku/ddd14/dieka.fast
+/home/han/Hantmku/ddd14/dieka/trunk/nag/dieka.fast
+/home/han/Hantmku/diekalibs/libdieka.fast.a
+/home/han/diekaruns/BertKoopman/CD1/Dieka_version_wissam/dieka/amd64-linux/dieka.fast
+/home/han/diekaruns/BertKoopman/CD1/Dieka_version_wissam/dieka/x86-sol/dieka.fast
+/home/han/diekaruns/BertKoopman/CD2/Decoupled_DoubleUshaped/Die/dieka.fast
+/home/han/diekaruns/Gid2dieka/gid/dieka/hppa/dieka.fast
+/home/han/diekaruns/Gid2dieka/gid/dieka/intel-linux/dieka.fast
+/home/han/dvlp/dieka.fast
+/usr/dieka/dvlp/dieka.fast
+/usr/dieka/dvlp/libdieka.fast.a
+/usr/local/dieka.fast
+/usr/local/DiekaLim-inclTst-Ubuntu/DiekaLim-inclTst/DiekaLim/dieka/trunk/gfortran/libdieka.fast.a
+/usr/local/DiekaLim2014/dieka.fast
+/usr/local/DiekaLim2014/dieka/trunk/gfortran/dieka.fast
+/usr/local/DiekaLim2014/dieka/trunk/gfortran/libdieka.fast.a
+/usr/local/DiekaLim2014NoTsts/DiekaLim/dieka/trunk/gfortran/dieka.fast
+/usr/local/DiekaLim2014NoTsts/DiekaLim/dieka/trunk/gfortran/libdieka.fast.a
+/usr/local/DiekaLim2019/dieka.fast
+/usr/local/DiekaLim2019/dieka/trunk/gfortran/dieka.fast
+/usr/local/DiekaLim2019/dieka/trunk/gfortran/libdieka.fast.a
+/usr/local/DiekaLim2019NoTst/dieka.fast
+/usr/local/DiekaLim2019NoTst/dieka/trunk/gfortran/dieka.fast
+/usr/local/DiekaLim2019NoTst/dieka/trunk/gfortran/libdieka.fast.a
+/usr/local/DiekaLimCleanWin/dieka/trunk/gfortran/dieka.fast
+/usr/local/DiekaLimCleanWin/dieka/trunk/gfortran/libdieka.fast.a
+/usr/local/bin/dieka.fast
+/usr/local/dieka11dvlp/dieka.fast
