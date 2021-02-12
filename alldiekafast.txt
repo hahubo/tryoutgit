@@ -1,3 +1,4 @@
+SOP
 -rwxr-xr-x 1 han han 10105379 sep 22  2019 /usr/dieka/dvlp/dieka.fast*
   No failures (ook de nieuwste gaan goed incl. texmic en fric/ Trim)
   Dit is de folder waarook digu etc staan)
