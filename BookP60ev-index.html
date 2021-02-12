@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">        
+<head>
+<meta charset="utf-8"/>
+<title>	2 Column Layout and creaing a header</title>
+	<!-- CSS Styles and Java Script files to be useds should be placed here. -->  
+<link rel="stylesheet" href="styles.css"> 
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel="stylesheet" type='text/css'>
+</head>
+       
+<body>	
+<div id="wrapper"> 	
+	<div id="header"> <!--<h1> Header </h1>-->
+	<a href="imgs">  <div id="logo" ></div></a>
+	<!--<a href="BookP60ev-index.html"><div id="logo" ></div></a>-->
+	<!--<img class="imgcenter" src="imgs/diekalogo.png" width="250" class="thumb"> -->
+	<h1> Welcome to dieka.org  </h1>
+	<!--<ul class="navigation">	
+ 		<li><a href="">home</a></li>
+ 		<li><a href="">about</a></li>
+		<li><a href="">blog</a></li>
+		<li><a href="">portfolio</a></li>
+		<li><a href="">services</a></li>
+		<li><a href="">contact</a></li>	
+	</ul>	-->	
+	</div> <!-- end header>-->
+	 		
+	<div id="main_content">
+		<!--<p><strong><img class="imgright" src="diekalogo.gif" width="120"> </p>-->
+		<!--<p><strong><img class="imgright" src="CrossPat.gif" width="120"> </p>-->
+		<h3> DiekA is an open source finite element code (FEM) for forming simulations 
+		and evaluating advanced plasticity models for large deformations.	
+		<h3>	The most important features of the code are:
+		<br>1. The arbitrary Lagrangian Eulerian method (ALE). 
+		<br> <tab> With this method the displacement of the element mesh is uncoupled from the material displacement. 
+		Material "flows" through the mesh. 
+		(<a href="https://research.utwente.nl/en/publications/on-the-simulation-of-thermo-mechanical-forming-processes")> Huetink)</a>, 
+		(<a href="https://research.utwente.nl/en/publications/analysis-of-guillotining-and-slitting-finite-element-simulations")> Wisselink)</a>.
+		<br></tab>2. The temperature can be used as a degree of freedom.
+		<br>3. Contact with special interface elements, and by a generalized contact method 
+		(<a href="https://research.utwente.nl/en/publications/contact-methods-in-finite-element-simulations")> Kloosterman).</a> 
+		<br>4. Tool description can be done by geometric contours, and by external files, Patran neutral files or GID files).
+		<br>5. For 3 dimensional calculations bulk elements, membrane elements, plate elements
+		and contact elements have been developed.
+		<br>6. Many material models are available for large deformation plasticity.</h3>	
+		<BR><BR>
+		<h3>Application examples:</h3>
+		
+		<!--<p> DiekA 10.1 is freely available. It was released in September 2011.sub1 sub1a sub1b sub1c sub1d sub1f sub1g</p>
+		<h2>sub2</h2>
+		<h3>sub3</h3>
+		</p> -->
+		<h4> Simulatin of rolling. Left: Updates Lagrange  and Right:  ALE:
+		 </h4>	
+		<p><strong><img class="imgleft" src="imgs/walsdemo2ul.gif" width="300"> </p>
+		<p><strong><img class="imgcenter" src="imgs/walsdemo2.gif" width="300"> </p>
+		<!--<p><strong><img class="imgcenter" src="imgs/crosspatdrawingloop.gif" width="300"> </p>-->
+		<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+		<h4> :</h4>
+		
+	
+		
+		<h4> Crossdie deepdrawing for evaluation and experemental validation of material models:
+		( <a href="http://doc.utwente.nl/73561/")> Van Riel)  </a> </h4>	
+		<p><strong><img class="imgleft" src="imgs/CrossPatToolLoop.gif" width="300"> </p>
+		<p><strong><img class="imgcenter" src="imgs/crosspatdrawingloop.gif" width="300"> </p>
+		<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+		<h4> Numisheet '05 Benchmark:</h4>
+		
+		<p><strong><img class="imgleft" src="imgs/Numisheet05b_final.gif" width="300"> </p>
+		<p><strong><img class="imgright" src="imgs/Numisheet05b_sim_complete.gif" width="160"> </p>
+		
+		<hr>
+		<!--<div id="video">				
+		<iframe width width="1020" height="415"  src="imgs/crosspatdrawingloop.gif" 
+		imgs/CrossPatToolLoop.gif" width="300 </iframe>		
+		</div>
+		<div id="video">
+		<iframe width width="1020" height="415"  src= https://www.huetink.nl/dieka></iframe>		
+		</div>	-->
+	</div> <!-- end main_content-->
+	
+	<div id="sidebar">
+	<h3> You can download a DiekA installation package for Linux, Unix and MS-Windows from : 
+ 	<!--<a href="https://www.huetink.nl/dieka/index.html">https://huetink.nl/dieka</a> -->
+ 	<a href="https://www.dieka.huetink.nl/">https://dieka.huetink.nl</a></h3>
+ 	<h4>
+ 	The package has some simple preprocessors developed by 
+ 	(<a href="https://people.utwente.nl/n.vanvliet"> Nico van Vliet)</a>:
+ 	<br><br> A preprocessor for simulation of Rolling,
+ 	written in Turbo Pascal (first version 1992 and later on adapted 
+ 	for additional Dieka Features). It can only be executed under a DOS emulator. 
+ 	<br><br>
+ 	A deepdrawing preprocessor written in C. <br><br>
+ 
+ 	For more complicates mesh generation you 
+	need the commercial <a href = "http://www.mscsoftware.com/product/patran" > MSC-Patran </a> package. 
+	The Patran neutral file format can optionally be used for (mesh) input and is the format for postprocessing 
+	There is a <a href =http://www.mscsoftware.com/page/msc-nastran-student-edition> 
+	Patran Student edition </a>. Also the free <a href = http://www.gidhome.com> GID </a> 
+	package has limited options for Dieka preprocessing. <br> 
+	The included postprocessing features are usually sufficient for examining the results, 
+	Patran and GID have more extensive features.</p>
+	<br>
+		<!--<form id="search_form" action="" method="get">
+		<input id="search_term" type="text"value="" placeholder="search..."/>
+		</form>
+		<ul class="sidebar_list">	
+ 		<li><a href="">home</a></li>
+ 		<li><a href="">about</a></li>
+		<li><a href="">blog</a></li>
+		<li><a href="">portfolio</a></li>
+		<li><a href="">services</a></li>
+		<li><a href="">contact</a></li>	
+		</ul>		
+		<!--<h3>DiekA applications</h3>	-->	
+		<!--<img class="imgright" src="CrossPat.gif" width="250">-->
+		<!--<img class="imgcenter" src="CrossPat.gif" width="250" class="thumb"> -->
+	</div>
+	
+	<div id="footer"> 	
+    	<h3>footer</h3>
+    </div>
+
+</div> <!-- end wrapper -->
+<!--
+<div id="container"> </div>  	
+<header>    			
+</header> -->		
+<!--
+<div class="col2">
+<form action="action_page.php">
+First name:<br>
+<input type="text" name="firstname">
+<br>
+Last name:<br>
+<input type="text" name="lastname">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+</div>
+
+
+<form>
+  User name:<br>
+  <input type="text" name="username"><br>
+  User password:<br>
+  <input type="password" name="psw">
+</form> 
+		
+<form>
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other  
+</form> 
+	
+		<div id="sidebar">
+			sidebar		
+		</div>
+		
+    	<div id="mijnDivID"> </div>
+    	<div class="MijnDivKlasse"> </div>
+    			
+        <div class="content">          
+           <h4> List of links </h4>
+    			<ul>
+     				<a href= "http://www.webdesignermagazine.nl"> webdesignmagazine  </a>
+     				<br> 
+    	    		<a href= "http://www.huetink.nl"> huetink.nl </a>	
+    			</ul> 	
+         </div>	
+    	
+    	<div class= "sidebar">
+    	</div>
+    	</strong>
+    	</p>
+
+<h2>My first PHP page</h2>
+ 
+
+<?php
+// This is a single-line comment
+# This is also a single-line comment    	
+echo "Hello World!";
+//$color = "red";
+//echo "My car is " . $color . <br>
+?> 
+<div id="footer"> 	
+    	footer
+    	
+</div>
+ -->   	    
+     </body>
+</html>     
+     
