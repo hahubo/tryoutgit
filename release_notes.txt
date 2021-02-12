@@ -1,0 +1,196 @@
+Release 11
+
+From this file the release notes for Dieka revision 11.1 will
+be generated. You can add items of interest to external users
+in plain ASCII. They will be edited by the time of the release.
+
+-General
++ Maximum number of elementgroups is free (was 100)
++ Maximum number of materialgroups is free (was 10) for modern material types.
+
+-*FRCR
++ parameters can be set per material group
++ nonlocal model works for all elementgroups
++ softening can be applied to ELPLAST as well
+
+Release 10
+
+From this file the release notes for Dieka revision 10.1 will
+be generated. You can add items of interest to external users
+in plain ASCII. They will be edited by the time of the release.
+
+-General:
++ Multi threading possible for stress update for most material models
+
+- Elements:
++ DST3 element has been removed
++ T3P1P1/T3AP1P1: linear triangle with bubble mode and pressure dof added
++ *NECO/1 1 has been set as default (was 0 0)
+
+- Material models
++ Extended Bergstrom hardening added to VM and ELPLAST model
++ Power law strain and strain-rate hardening added to VM and ELPLAST model
++ Ghosh and Hockett-Sherby hardening added to ELPLAST model
++ TEODOSIU model has been added
++ LEVKOVITCH model has been added
++ ALFLOW (Nes) hardening model has been added
++ DAMAGE (isotropic+anisotropic) model has been added
++ Torsionstiffness should be defined at *ELEM instead at *MATERIAL
++ EPIS uses same scaling as ELPLAST (G+H) instead 2/3(F+G+H)
+
+-Postprocessing:
++ Ip data of shell elements are linearly extrapolated to the surface
+
+- Neutral file
++ Coordinates can be scaled/translated during import
+
+Release 9
+
+From this file the release notes for Dieka revision 9.1 will
+be generated. You can add items of interest to external users
+in plain ASCII. They will be edited by the time of the release.
+
+- Standardized reading of input file. Every line of the input file is processed before being parsed.
+
+- Solvers. Some fast direct solvers have been added
+
+- Material models
++ General modules for flow surfaces and hardening laws added for easy use in user material models
++ ELPLAST material model
++ Added option for Piece-wise linear hardening curve for VM material model
+  (*MATERIAL/VM/TABULAR)
+
+- Integration through thickness
++ max. number of ip increased from 7 to 50
++ lobatto added (max=7)
+
+- Fracture criteria
++ nonlocal damage model added
+
+-Loads
++ INCRST works again
+
+Release 8
+
+From this file the release notes for Dieka revision 8.1 will
+be generated. You can add items of interest to external users
+in plain ASCII. They will be edited by the time of the release.
+
+- Trimming added
+
+- Keyword FAILURE extended with options to automatically
+  check neighbouring elements.
+
+- Correction for planar anisotropic Vegter model with Vegter hardening.
+  This combination failed in 7.1 (also prepared for 7.2).
+
+- Correction of rotated basis when elements with different numbers
+  of dofs are in the model (nvrpel<mvrpel). Also included possible
+  use of rotated basis with thermo-mechanical shell elements.
+  (also prepared for 7.2).
+
+- Implemented fracture criteria (*FRCR) for plate elements.
+  Before it was only implemented for solid elements.
+
+- Keywords *THICK and *THSW have been merged into *THICK
+  A constant thickness can be set per elementgroup.
+
+- Changes for the keyword *CONTACT:
+  + Added output in GiD format
+  + CONTOUR2D => Now possible to give a range of nodes instead specifying them all separately
+  + NEUTRAL => Neutral files can also be used for 2D contours
+  + Resultant force of a contact pair can be saved in a file "contact.tab" using *OUTPUT/FOLLOW
+
+- Logfile "vorm.dat" has been renamed to "inputfile.log" 
+  
+-Changed output in PATRAN format to standard. Now:
+ + Only a basename.neu is written (old 0.neu) and not stepnr.neu for ALE anymore.
+ + stepnr.nod is now called basename_stepnr.nod
+ + stepnr.dis is now called basename_stepnr.dis
+ + For every *REFINE/*TRIM the basename is changed automatically to basename_r<stepnr>
+   and no stepnumber will be skipped anymore
+ +*CONTACT: slave1.neu is renamed to basename_slave1.neu, etc
+ + *REFINE/*WRINKLING: Output is not generated automatically anymore.
+   It has to be switched on under *OUTPUT with resp ERROR or WRINKLING.
+ + *OUTPUT/CONTACT has been renamed to *OUTPUT/NIC (Nodes In Contact)
+   in case of contact elements to avoid confusion with *CONTACT, 
+   which still used *OUTPUT/CONTACT.
+
+-Input from PATRAN neutral files
+ + Added option for import of constrains and connects.
+ + A neutral file may contain more than one elementgroup or loadset.
+
+-Restart files:
+ + Names conform other output files.
+ + Restart file from step 10 of basename.inv
+   basename.inv10.bin => basename_10.bin (or asc instead bin)
+ + Refine or trim after step 10
+   basename_r11.inv.bin => basename_r11_10.bin
+   Also: basename_r11.inv.ref => basename_r11.ref
+ + Inputfile: full filename has to be given at *RESTART
+
+- Input for Bergstrom-VanLiempt hardening adapted to manual
+  m is a positive number (-m previously).
+
+Release 7
+
+From this file the release notes for Dieka revision 7.1 will
+be generated. You can add items of interest to external users
+in plain ASCII. They will be edited by Ton, by the time of
+the release (October 2003).
+
+- Added thermo-mechanical membrane and Kirchhoff-shell elements
+
+- Added thermo-mechanical 3D 6-node contact elements for membranes and shells
+
+- Added thermo-mechanical Bergstrom hardening relation
+
+- Added contact algorithm (Gertjan)
+
+- Removed old contact elements Van der Lugt.
+
+- Changed syntax Vegter criterion
+
+- Wrinkling criterion (single sided contact), postproc. curvature.
+
+- Time or step number in xyd file output
+
+--------------------------------------------------------------------------------
+
+Release 6
+
+From this file the release notes for Dieka revision 6.0 will
+be generated. You can add items of interest to external users
+in plain ASCII. They will be edited by Ton, by the time of
+the release (October 2000).
+
+Add the name of the main developer to the text, so I can ask
+for more information if necessary.
+
+1. Added pressure loads on continuum and shell elements.  (Ton)
+
+2. Toolcheck is not longer nessecary (Timo)
+
+3. Toolnodes can be used for contour-steering (Timo)
+
+4. Creating neutral files during iteration is not longer available (Timo)
+
+5. Connects for the outer contact nodes are created by Dieka (Timo)
+
+6. Projection of conact nodes on the tools is also done at begin of first
+   step or at begin of first step after a restart (Timo)
+
+7. Deepdrawing preprocessor is up-to-date (Timo)
+
+8. Some fracture criteria are calculated using *FRCR (Harm)
+
+9. Some changes in the use of surface options (Harm)
+   a) READPRIOR added; Options are treated in same order as read from inputfile
+   b) Number of neighbor and Auxiliary points is made variable between 0 and 15
+      (was fixed to 5).
+   c) The priority of curves is now linked to the priority of normal nodes.
+
+10. Refine option is available (for sheet metal forming)
+
+11. Hill '48 material model, including isotropic, kinematic and mixed
+    hardening for continuum elements. (Ton)
